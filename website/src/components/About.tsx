@@ -13,20 +13,6 @@ const About = () => {
 
   const achievements = [
     {
-      year: "2025",
-      title: "Boeing National Aeromodelling Competition, IIT Bombay (2024–25)",
-      description: "Achieved 2nd place in the Zonal Round, showcasing technica innovation, teamwork, and precision in aeromodelling. Advanced to the National Finale, where the team was among the Top 12 in India to represent at IIT Bombay.",
-      highlight: "2nd Place in Zonal Round, Top 12 National Finalists",
-      logo: "/img/Techfest.jpeg"
-    },
-   {
-     year: "2025",
-     title: "Boeing National Aeromodelling Competition, IIT Bombay (Zonal Round 2024–25)",
-     description: "Secured 2nd place in the Zonal Round at IIT Bombay by demonstrating strong aircraft design, aerodynamic stability and consistent mission execution. Advanced to the National Finale.",
-     highlight: "2nd Place (Zonal), Advanced to National Finale",
-     logo: "/img/Boeing.jpeg"
-   },
-   {
      year: "2025",
      title: "Boeing National Aeromodelling Competition, IIT Gandhinagar (Zonal Round 2025–26)",
      description: "Achieved 3rd place in the Zonal Round at IIT Gandhinagar with improved control systems, payload mechanisms and structural refinements delivering reliable performance.",
@@ -34,18 +20,25 @@ const About = () => {
      logo: "/img/Boeing.jpeg"
    },
    {
-     year: "2025",
-     title: "Boeing National Aeromodelling Competition — National Finale, Bangalore",
-     description: "Represented the institute at the National Finale in Bangalore and competed among the top teams nationally, delivering strong mission planning, flight accuracy and system reliability.",
-     highlight: "Top 5 Teams Nationally",
-     logo: "/img/Boeing.jpeg"
-   },
+      year: "2025",
+      title: "Boeing National Aeromodelling Competition — National Finale, Bangalore",
+      description: "Represented the institute at the National Finale in Bangalore and competed among the top teams nationally, delivering strong mission planning, flight accuracy and system reliability.",
+      highlight: "Top 5 Teams Nationally",
+      logo: "/img/Boeing.jpeg"
+    },
    {
      year: "2024",
      title: "Carry the Consignment — SVNIT Surat",
      description: "Placed 3rd in the precision payload delivery challenge at SVNIT Surat. The entry stood out for efficient weight distribution, robust structure and consistent task execution.",
      highlight: "3rd Place",
      logo: "/img/SVNIT.jpeg"
+   }, 
+   {
+     year: "2024",
+     title: "Boeing National Aeromodelling Competition, IIT Bombay (Zonal Round 2024–25)",
+     description: "Secured 2nd place in the Zonal Round at IIT Bombay by demonstrating strong aircraft design, aerodynamic stability and consistent mission execution. Advanced to the National Finale.",
+     highlight: "2nd Place (Zonal), Advanced to National Finale",
+     logo: "/img/Boeing.jpeg"
    },
    {
      year: "2023",
