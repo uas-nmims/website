@@ -19,26 +19,54 @@ const About = () => {
       highlight: "2nd Place in Zonal Round, Top 12 National Finalists",
       logo: "/img/Techfest.jpeg"
     },
-    {
-      year: "2023",
-      title: "Drone Log Competition, IIT Bombay Techfest",
-      description: "Secured 2nd position in this national-level event focused on warehouse management using drones. The challenge tested our ability to design and operate drones for tasks such as payload handling, precision navigation, and efficient logistics execution",
-      highlight: "2nd Place Nationally among 30+ Teams",
-      logo: "/img/Techfest.jpeg"
+   {
+     year: "2025",
+     title: "Boeing National Aeromodelling Competition, IIT Bombay (Zonal Round 2024–25)",
+     description: "Secured 2nd place in the Zonal Round at IIT Bombay by demonstrating strong aircraft design, aerodynamic stability and consistent mission execution. Advanced to the National Finale.",
+     highlight: "2nd Place (Zonal), Advanced to National Finale",
+     logo: "/img/Boeing.jpeg"
+   },
+   {
+     year: "2025",
+     title: "Boeing National Aeromodelling Competition, IIT Gandhinagar (Zonal Round 2025–26)",
+     description: "Achieved 3rd place in the Zonal Round at IIT Gandhinagar with improved control systems, payload mechanisms and structural refinements delivering reliable performance.",
+     highlight: "3rd Place (Zonal)",
+     logo: "/img/Boeing.jpeg"
+   },
+   {
+     year: "2025",
+     title: "Boeing National Aeromodelling Competition — National Finale, Bangalore",
+     description: "Represented the institute at the National Finale in Bangalore and competed among the top teams nationally, delivering strong mission planning, flight accuracy and system reliability.",
+     highlight: "Top 5 Teams Nationally",
+     logo: "/img/Boeing.jpeg"
+   },
+   {
+     year: "2024",
+     title: "Carry the Consignment — SVNIT Surat",
+     description: "Placed 3rd in the precision payload delivery challenge at SVNIT Surat. The entry stood out for efficient weight distribution, robust structure and consistent task execution.",
+     highlight: "3rd Place",
+     logo: "/img/SVNIT.jpeg"
+   },
+   {
+     year: "2023",
+     title: "Drone Log Competition, IIT Bombay Techfest",
+     description: "Secured 2nd position in this national-level event focused on warehouse management using drones. The challenge tested our ability to design and operate drones for tasks such as payload handling, precision navigation, and efficient logistics execution",
+     highlight: "2nd Place Nationally among 30+ Teams",
+     logo: "/img/Techfest.jpeg"
+   },
+   {
+     year: "2018",
+     title: "AUVSI SUAS 2018",
+     description: "We participated for the third time in the 16th AUVSI SUAS 2018 with our hexa-copter. Over 75 teams from all across the globe participated.",
+     highlight: "We secured 5th rank Worldwide and 1st among all Indian teams.",
+     logo: "/img/SUAS.jpeg"
     },
     {
-      year: "2018",
-      title: "AUVSI SUAS 2018",
-      description: "We participated for the third time in the 16th AUVSI SUAS 2018 with our hexa-copter. Over 75 teams from all across the globe participated.",
-      highlight: "We secured 5th rank Worldwide and 1st among all Indian teams.",
-      logo: "/img/SUAS.jpeg"
-    },
-    {
-      year: "2016",
-      title: "AUVSI SUAS 2016",
-      description: "We participated in the AUVSI SUAS 2016 competition held in Maryland, USA with our drone Scylla 2K16.",
-      highlight: "We secured a Mission Rank 5 at the competition and 3rd among all Indian Teams.",
-      logo: "/img/SUAS.jpeg"
+     year: "2016",
+     title: "AUVSI SUAS 2016",
+     description: "We participated in the AUVSI SUAS 2016 competition held in Maryland, USA with our drone Scylla 2K16.",
+     highlight: "We secured a Mission Rank 5 at the competition and 3rd among all Indian Teams.",
+     logo: "/img/SUAS.jpeg"
     },
   ];
 
