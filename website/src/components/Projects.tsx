@@ -64,7 +64,7 @@ const Projects = () => {
       id: 6,
       title: "UGV",
       description:
-        "It is Unmanned Aerial Vehicle used to autonomously perform payload delivery wherever Aerial Systems can't reach",
+        "It is Unmanned Ground Vehicle used to autonomously perform payload delivery wherever Aerial Systems can't reach",
       image: "/img/UGV.jpg",
       category: "System",
       learnMoreUrl:
@@ -132,7 +132,7 @@ const Projects = () => {
       {
         id: 10,
         title: "Reptile",
-        description: "Autonomous unmanned ground vehicle for last‑mile delivery and industrial inspection with day/night capability",
+        description: "Autonomous unmanned aerial vehicle for last‑mile delivery and industrial inspection with day/night capability",
         image: "/img/Reptile.png",
         category: "Vehicle",
         specs: {
