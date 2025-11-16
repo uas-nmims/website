@@ -64,7 +64,7 @@ const Projects = () => {
       id: 6,
       title: "UGV",
       description:
-        "It is Unmanned Grounded Vehicle used to autonomously perform payload delivery wherever Aerial Systems can't reach",
+        "It is Unmanned Aerial Vehicle used to autonomously perform payload delivery wherever Aerial Systems can't reach",
       image: "/img/UGV.jpg",
       category: "System",
       learnMoreUrl:
