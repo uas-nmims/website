@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  InstagramLogo, 
-  FacebookLogo, 
-  LinkedinLogo, 
+import {
+  InstagramLogo,
+  FacebookLogo,
+  LinkedinLogo,
   YoutubeLogo,
   Phone,
   Envelope,
@@ -31,7 +31,7 @@ const Footer = () => {
       });
 
       // Footer sections slide in
-      gsap.fromTo(".footer-section", 
+      gsap.fromTo(".footer-section",
         { opacity: 0, y: 30 },
         {
           opacity: 1,
@@ -48,7 +48,7 @@ const Footer = () => {
       );
 
       // Social icons simple animation
-      gsap.fromTo(".social-icon", 
+      gsap.fromTo(".social-icon",
         { opacity: 0, scale: 0.8 },
         {
           opacity: 1,
@@ -66,34 +66,34 @@ const Footer = () => {
   }, []);
 
   const socialLinks = [
-    { 
-      icon: InstagramLogo, 
-      href: 'https://www.instagram.com/uasnmims', 
+    {
+      icon: InstagramLogo,
+      href: 'https://www.instagram.com/uasnmims',
       label: 'Instagram',
       hoverColor: 'hover:text-pink-500'
     },
-    { 
-      icon: FacebookLogo, 
-      href: 'https://www.facebook.com/UASNMIMS/', 
+    {
+      icon: FacebookLogo,
+      href: 'https://www.facebook.com/UASNMIMS/',
       label: 'Facebook',
       hoverColor: 'hover:text-blue-500'
     },
-    { 
-      icon: LinkedinLogo, 
-      href: 'https://www.linkedin.com/company/uas-nmims/posts/?feedView=all', 
+    {
+      icon: LinkedinLogo,
+      href: 'https://www.linkedin.com/company/uas-nmims/posts/?feedView=all',
       label: 'LinkedIn',
       hoverColor: 'hover:text-blue-600'
     },
-    { 
-      icon: YoutubeLogo, 
-      href: 'https://www.youtube.com/channel/UCto9FMLqgt1F0MLdSEjdzgg', 
+    {
+      icon: YoutubeLogo,
+      href: 'https://www.youtube.com/channel/UCto9FMLqgt1F0MLdSEjdzgg',
       label: 'YouTube',
       hoverColor: 'hover:text-red-500'
     }
   ];
 
   return (
-    <footer 
+    <footer
       ref={footerRef}
       className="relative py-20 px-4 bg-black border-t border-white/10 overflow-hidden"
     >
@@ -112,14 +112,14 @@ const Footer = () => {
 
       <div className="max-w-7xl mx-auto relative z-10">
         <div className="grid lg:grid-cols-3 gap-12 mb-16">
-          
+
           {/* Reach Us Section */}
           <div className="footer-section space-y-6">
             <h3 className="text-2xl font-semibold text-white mb-8 relative">
               Reach Us At
               <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-blue-400/60"></div>
             </h3>
-            
+
             <div className="space-y-4">
               {/* Captain */}
               <div className="group p-4 bg-white/5 border border-white/10 rounded-lg hover:bg-white/8 hover:border-blue-400/30 transition-all duration-300">
@@ -128,28 +128,14 @@ const Footer = () => {
                     <Envelope size={20} className="text-white/80" />
                   </div>
                   <div>
-                    <p className="text-white font-medium">Atharva Sharma (Captain)</p>
-                    <a href="mailto:atharva.uas@gmail.com" className="text-white/70 hover:text-blue-400 transition-colors duration-300">
-                      atharva.uas@gmail.com
-                    </a>
-                  </div>
-                </div>
-              </div>
-
-              {/* Vice Captain */}
-              <div className="group p-4 bg-white/5 border border-white/10 rounded-lg hover:bg-white/8 hover:border-purple-400/30 transition-all duration-300">
-                <div className="flex items-start space-x-4">
-                  <div className="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-purple-400/20 transition-colors duration-300">
-                    <Envelope size={20} className="text-white/80" />
-                  </div>
-                  <div>
-                    <p className="text-white font-medium">Mahak Sharma (Vice-Captain)</p>
-                    <a href="mailto:mahak.uas@gmail.com" className="text-white/70 hover:text-purple-400 transition-colors duration-300">
+                    <p className="text-white font-medium">Mahak Sharma (Captain)</p>
+                    <a href="mailto:mahak.uas@gmail.com" className="text-white/70 hover:text-blue-400 transition-colors duration-300">
                       mahak.uas@gmail.com
                     </a>
                   </div>
                 </div>
               </div>
+
 
               {/* Email */}
               <div className="group p-4 bg-white/5 border border-white/10 rounded-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
@@ -174,14 +160,14 @@ const Footer = () => {
               Visit Us At
               <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-purple-400/60"></div>
             </h3>
-            
+
             <div className="group p-6 bg-white/5 border border-white/10 rounded-lg hover:bg-white/8 hover:border-white/20 transition-all duration-300">
               <div className="flex items-start space-x-4">
                 <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center group-hover:bg-white/15 transition-colors duration-300 flex-shrink-0">
                   <MapPin size={24} className="text-white/80" />
                 </div>
                 <div>
-                  <a 
+                  <a
                     href="https://www.google.com/maps/place/21%C2%B017'03.7%22N+74%C2%B050'40.6%22E/@21.2843732,74.8440688,206m/data=!3m2!1e3!4b1!4m9!1m2!2m1!1snmims+shirpur!3m5!1s0x0:0x0!7e2!8m2!3d21.2843715!4d74.8446156"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -205,7 +191,7 @@ const Footer = () => {
               Stay Connected
               <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-white/40"></div>
             </h3>
-            
+
             <div className="flex space-x-4 justify-center lg:justify-start">
               {socialLinks.map((social, index) => {
                 const IconComponent = social.icon;

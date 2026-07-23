@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { 
-  GithubLogo, 
-  LinkedinLogo, 
+import {
+  GithubLogo,
+  LinkedinLogo,
   TwitterLogo,
   EnvelopeSimple,
   InstagramLogo,
@@ -20,7 +20,7 @@ const Contact = () => {
   const emailRef = useRef<HTMLDivElement>(null);
   const socialsRef = useRef<HTMLDivElement>(null);
   const supportRef = useRef<HTMLDivElement>(null);
-  
+
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
@@ -28,33 +28,33 @@ const Contact = () => {
   const teamInfo = {
     title: " TEAM UAS NMIMS",
     subtitle: "Innovating the future of drone technology",
-    teamPhoto: "/img/portfolio/thumbnails/img30.jpg", // Replace with your actual team photo
+    teamPhoto: "/img/portfolio/thumbnails/Team_Photo_2026.jpg.jpeg", // Replace with your actual team photo
   };
 
   const contactEmail = "uasnmims@gmail.com"; // Replace with actual email
-  
+
   const socialLinks = [
-    { 
-      icon: LinkedinLogo, 
-      href: 'https://www.linkedin.com/company/uas-nmims/posts/?feedView=all', 
+    {
+      icon: LinkedinLogo,
+      href: 'https://www.linkedin.com/company/uas-nmims/posts/?feedView=all',
       label: 'LinkedIn',
       color: 'hover:text-white hover:bg-blue-600'
     },
-    { 
-      icon: FacebookLogo, 
-      href: 'https://www.facebook.com/UASNMIMS/', 
+    {
+      icon: FacebookLogo,
+      href: 'https://www.facebook.com/UASNMIMS/',
       label: 'Facebook',
       color: 'hover:text-white hover:bg-blue-400'
     },
-    { 
-      icon: InstagramLogo, 
-      href: 'https://www.instagram.com/uasnmims/#', 
+    {
+      icon: InstagramLogo,
+      href: 'https://www.instagram.com/uasnmims/#',
       label: 'Instagram',
       color: 'hover:text-white hover:bg-gradient-to-r hover:from-purple-500 hover:to-pink-500'
     },
-    { 
-      icon: YoutubeLogo, 
-      href: 'https://www.youtube.com/channel/UCto9FMLqgt1F0MLdSEjdzgg', 
+    {
+      icon: YoutubeLogo,
+      href: 'https://www.youtube.com/channel/UCto9FMLqgt1F0MLdSEjdzgg',
       label: 'YouTube',
       color: 'hover:text-white hover:bg-red-600'
     },
@@ -206,11 +206,11 @@ const Contact = () => {
         for (let i = 0; i < count; i++) {
           const orb = document.createElement("div");
           orb.style.position = "absolute";
-          orb.style.width = `${260 + Math.random()*140}px`;
+          orb.style.width = `${260 + Math.random() * 140}px`;
           orb.style.height = orb.style.width;
           orb.style.borderRadius = "50%";
-          orb.style.left = `${Math.random()*90}%`;
-          orb.style.top = `${Math.random()*85}%`;
+          orb.style.left = `${Math.random() * 90}%`;
+          orb.style.top = `${Math.random() * 85}%`;
           orb.style.pointerEvents = "none";
           orb.style.opacity = "0.55";
           orb.style.mixBlendMode = "screen";
@@ -227,13 +227,13 @@ const Contact = () => {
           orbs.push(orb);
 
           gsap.to(orb, {
-            x: () => Math.random()*120 - 60,
-            y: () => Math.random()*100 - 50,
-            duration: 22 + Math.random()*10,
+            x: () => Math.random() * 120 - 60,
+            y: () => Math.random() * 100 - 50,
+            duration: 22 + Math.random() * 10,
             repeat: -1,
             yoyo: true,
             ease: "sine.inOut",
-            delay: Math.random()*6
+            delay: Math.random() * 6
           });
         }
 
@@ -251,7 +251,7 @@ const Contact = () => {
         bg.appendChild(glow);
 
         let last = 0;
-        function move(e: MouseEvent | {clientX:number; clientY:number}) {
+        function move(e: MouseEvent | { clientX: number; clientY: number }) {
           const now = performance.now();
           if (now - last < 16) return; last = now;
           const r = bg.getBoundingClientRect();
@@ -313,16 +313,16 @@ const Contact = () => {
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/10">
             {/* Glow effect */}
             <div className="absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <img 
+
+            <img
               src={teamInfo.teamPhoto}
               alt="Team UAS NMIMS"
               className="w-full h-[400px] md:h-[600px] object-cover transition-transform duration-700 hover:scale-105"
             />
-            
+
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
-            
+
             {/* Team info overlay */}
             <div className="absolute bottom-6 left-6 right-6">
               <div className="bg-black/50 backdrop-blur-sm rounded-2xl p-6 border border-white/20">
@@ -357,14 +357,14 @@ const Contact = () => {
             <p className="text-white/70 mb-6">
               Reach out to us directly for inquiries, collaborations, or any questions about our work
             </p>
-            <a 
+            <a
               href={`mailto:${contactEmail}`}
               className="inline-block text-2xl font-semibold text-white hover:text-gray-300 transition-colors duration-300 mb-4"
             >
               {contactEmail}
             </a>
             <br />
-            <a 
+            <a
               href={`mailto:${contactEmail}?subject=Inquiry from Team UAS NMIMS Website`}
               className="inline-block px-8 py-4 border rounded-xl text-white font-semibold transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-[rgba(80,140,210,0.25)]"
               style={{
@@ -393,14 +393,14 @@ const Contact = () => {
         <div className="card-minimal p-8 md:p-12">
           <div className="text-center">
             <div className="mb-8">
-              <img 
+              <img
                 src="/img/NMIMS_LOGO1.png"
                 alt="NMIMS University Logo"
                 className="h-24 md:h-32 mx-auto mb-6 transition-transform duration-300 hover:scale-105 rounded-2xl"
               />
               <h3 className="text-2xl font-semibold mb-4">NMIMS University</h3>
               <p className="text-white/70 max-w-2xl mx-auto">
-                Narsee Monjee Institute of Management Studies continues to support cutting-edge research 
+                Narsee Monjee Institute of Management Studies continues to support cutting-edge research
                 and innovation in technology and engineering solutions.
               </p>
             </div>
@@ -434,7 +434,7 @@ const Contact = () => {
               >
                 {/* Glow effect */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-2xl"></div>
-                
+
                 <div className="relative flex flex-col items-center">
                   <IconComponent size={32} className="mb-3 transition-transform duration-300 group-hover:scale-110" />
                   <span className="text-sm font-medium text-white/80 group-hover:text-white transition-colors duration-300">

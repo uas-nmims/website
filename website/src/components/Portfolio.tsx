@@ -4,9 +4,6 @@ import Preloader from './Preloader';
 import Navigation from './Navigation';
 import Hero from './Hero';
 import About from './About';
-import Projects from './Projects';
-import Timeline from './Timeline';
-import Contact from './Contact';
 import Footer from './Footer';
 import LogoLoop from './LogoLoop';
 

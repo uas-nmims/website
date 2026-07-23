@@ -14,7 +14,7 @@ const Projects = () => {
   const researchProjects = [
     {
       id: 1,
-      title: "PLSLM",
+      title: "Hex",
       description:
         "Precision Location Soft Landing Mechanism: Used for Precision Landing irrespective of the surface protecting Drone as well as payload",
       image: "/img/Hexa.jpg",
@@ -22,10 +22,10 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "VISON",
+      title: "VTOL",
       description:
         "Many Industries are shifting towards VTOL because of its speed like aircraft and hovering capacity to that of multirotor providing benefits of both.",
-      image: "/img/VTOL1.png",
+      image: "/img/VTOL1.jpg",
       category: "Research",
     },
     {
@@ -73,83 +73,79 @@ const Projects = () => {
   ];
 
   // Vehicles Data
-    const vehicles = [
-      {
-        id: 7,
-        title: "Hex",
-        description: "Heavy‑lift hexacopter for payload delivery and ISR missions with stable flight and safety redundancies",
-        image: "/img/HEX1.jpg",
-        category: "Vehicle",
-        specs: {
-          maxPayload: "5-6 kg",
-          flightTime: "35 minutes",
-          maxSpeed: "40 km/h",
-          features: [
-            "RTK GNSS positioning",
-            "360° obstacle sensing",
-            "Quick‑release payload",
-            "Aerial Mapping",
-            "Package delivery"
-          ]
-        }
-      },
-      {
-        id: 8,
-        title: "Pawan",
-        description: "Lightweight fixed-wing UAV built for efficient long-range flight, stable gliding, and wide-area coverage.",
-        image: "/img/Pawan.png",
-        category: "Vehicle",
-        specs: {
-          maxPayload: "1–2 kg",
-          flightTime: "45–60 minutes",
-          maxSpeed: "60–75 km/h",
-          features: [
-            "High endurance",
-            "Stable glide performance",
-            "Wide-area aerial coverage",
-            "Smooth long-range operation",
-            "Ideal for mapping and surveillance"
-          ]
-        }
-      },
-      {
-        id: 9,
-        title: "Priya",
-        description: "Fast, versatile quadcopter for aerial imaging and precision applications with interchangeable payloads",
-        image: "/img/Priya.jpg",
-        category: "Vehicle",
-        specs: {
-          maxPayload: "1-2 kg",
-          flightTime: "12 minutes",
-          maxSpeed: "58 km/h",
-          features: [
-            "FPV Racing",
-            "Aerial Photography",
-            "Terrain following",
-          ]
-        }
-      },
-      {
-        id: 10,
-        title: "Reptile",
-        description: "Autonomous unmanned aerial vehicle for last‑mile delivery and industrial inspection with day/night capability",
-        image: "/img/Reptile.png",
-        category: "Vehicle",
-        specs: {
-          maxPayload: "1-2 kg",
-          flightTime: "15 minutes",
-          maxSpeed: "25 km/h",
-          features: [
-            "All-terrain suspension",
-            "Wildlife monitoring",
-            "Remote & autonomous modes",
-            "Cinematography",
-            "Infrastructure inspection",
-            "Search and rescue"
-          ]
-        }
+  const vehicles = [
+    {
+      id: 7,
+      title: "Hex",
+      description: "Heavy‑lift hexacopter for payload delivery and ISR missions with stable flight and safety redundancies",
+      image: "/img/HEX1.jpg",
+      category: "Vehicle",
+      specs: {
+        maxPayload: "7-8 kg",
+        flightTime: "15-17 minutes",
+        maxSpeed: "25 km/h",
+        features: [
+          "Payload delivery",
+          "360° obstacle sensing",
+          "Aerial Mapping",
+        ]
       }
-    ];
+    },
+    {
+      id: 8,
+      title: "Pawan",
+      description: "Lightweight fixed-wing UAV built for efficient long-range flight, stable gliding, and wide-area coverage.",
+      image: "/img/Pawan.jpg",
+      category: "Vehicle",
+      specs: {
+        maxPayload: "1–2 kg",
+        flightTime: "5-10 minutes",
+        maxSpeed: "30-40 km/h",
+        features: [
+          "High endurance",
+          "Stable glide performance",
+          "Smooth long-range operation",
+          "Ideal for mapping and surveillance"
+        ]
+      }
+    },
+    {
+      id: 9,
+      title: "Priya",
+      description: "Fast, versatile quadcopter for aerial imaging and precision applications with interchangeable payloads",
+      image: "/img/Priya.jpg",
+      category: "Vehicle",
+      specs: {
+        maxPayload: "1 kg",
+        flightTime: "5-10 minutes",
+        maxSpeed: "50-60 km/h",
+        features: [
+          "FPV Racing",
+          "Aerial Photography",
+        ]
+      }
+    },
+    {
+      id: 10,
+      title: "Reptile",
+      description: "Autonomous unmanned aerial vehicle for last‑mile delivery and industrial inspection with day/night capability",
+      image: "/img/Reptile.jpg",
+      category: "Vehicle",
+      specs: {
+        maxPayload: "2-5 kg",
+        flightTime: "15 minutes",
+        maxSpeed: "25 km/h",
+        features: [
+          "All-terrain suspension",
+          "Wildlife monitoring",
+          "Remote & autonomous modes",
+          "Cinematography",
+          "Infrastructure inspection",
+          "Search and rescue"
+        ]
+      }
+    }
+  ];
 
   useEffect(() => {
     // Inject global navy background + component styles locally
