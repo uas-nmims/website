@@ -454,7 +454,7 @@ const Projects = () => {
             </span>
           </h2>
           <p className="text-white/60 text-sm md:text-base">
-            Platforms, payloads, autonomy — engineered for missions.
+            Engineered for missions
           </p>
           <div
             className="w-24 h-px mx-auto mt-3"
