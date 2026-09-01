@@ -131,10 +131,10 @@ const Navigation = () => {
     <>
       {/* Navigation - FIXED FOR MOBILE */}
       <nav 
-        className={`fixed top-0 left-0 right-0 w-full z-[9999] transition-all duration-300 ${
-          scrolled 
-            ? 'bg-black/95 backdrop-blur-xl border-b border-white/20' 
-            : 'bg-black/75 backdrop-blur-md'
+        className={`fixed top-0 left-0 right-0 w-full z-[9999] backdrop-blur-md transition-all duration-300 ${
+          scrolled
+            ? 'bg-black/95 border-b border-white/20'
+            : 'bg-black/75'
         }`}
         style={{
           WebkitBackfaceVisibility: 'hidden',

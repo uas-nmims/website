@@ -200,15 +200,38 @@ const About = () => {
         will-change: transform;
       }
 
-      .achievement-line {
-        background: linear-gradient(
-          180deg,
-          rgba(255,255,255,0.05) 0%,
-          rgba(255,255,255,0.2) 20%,
-          rgba(255,255,255,0.16) 50%,
-          rgba(255,255,255,0.2) 80%,
-          rgba(255,255,255,0.05) 100%
+      /* Runway: a long grey dashed strip that's there from the start, like an
+         unlit airstrip. A second white-dashed layer, same dash pattern,
+         overlays it and is revealed top-down as the plane flies - the strip
+         "lights up" white behind the plane and goes dark again if you
+         scroll back up. */
+      .runway-dashes {
+        border-radius: 2px;
+        background-repeat: repeat-y;
+        background-image: repeating-linear-gradient(
+          to bottom,
+          currentColor 0px,
+          currentColor 26px,
+          transparent 26px,
+          transparent 46px
         );
+      }
+
+      .runway-line-base {
+        color: rgba(255,255,255,0.35);
+      }
+
+      .runway-line-progress {
+        color: #ffffff;
+        /* Blur radius kept well under the gap between dashes (20px desktop,
+           14px mobile) so each dash stays a separate mark instead of
+           smearing into one solid glowing beam. */
+        filter: drop-shadow(0 0 1.5px rgba(255,255,255,0.9));
+        /* Revealed via clip-path (GPU-composited), not height/scale, so the
+           scroll-scrubbed reveal never forces layout or repaints - it just
+           moves a mask on the compositor thread. */
+        clip-path: inset(0% 0% 100% 0%);
+        will-change: clip-path;
       }
 
       @media (max-width: 767px) {
@@ -223,6 +246,16 @@ const About = () => {
         .achievement-logo {
           width: 48px;
           height: 48px;
+        }
+
+        .runway-dashes {
+          background-image: repeating-linear-gradient(
+            to bottom,
+            currentColor 0px,
+            currentColor 18px,
+            transparent 18px,
+            transparent 32px
+          );
         }
       }
     `;
@@ -243,14 +276,10 @@ const About = () => {
 
     if (prefersReducedMotion) {
       gsap.set(
-        [
-          titleRef.current,
-          '.timeline-item',
-          '.achievement-line',
-          planeRef.current,
-        ],
+        [titleRef.current, '.timeline-item', planeRef.current],
         { opacity: 1 },
       );
+      gsap.set('.runway-line-progress', { clipPath: 'inset(0% 0% 0% 0%)' });
       return;
     }
 
@@ -275,17 +304,25 @@ const About = () => {
         },
       );
 
+      // The grey runway (.runway-line-base) is static and just sits there.
+      // The white overlay lights up top-down as you scroll and dims back
+      // down as you scroll up - scrubbed to the same scroll range the plane
+      // flies through, so it always lights up exactly to where the plane is.
+      // Revealed via clip-path (compositor-only, no layout/repaint cost on
+      // every scroll frame) instead of height or scaleY, so the dash pattern
+      // never stretches AND the scrub stays smooth while scrolling.
       gsap.fromTo(
-        '.achievement-line',
-        { scaleY: 0, transformOrigin: 'top center' },
+        '.runway-line-progress',
+        { clipPath: 'inset(0% 0% 100% 0%)' },
         {
-          scaleY: 1,
-          duration: 1.3,
-          ease: 'power2.out',
+          clipPath: 'inset(0% 0% 0% 0%)',
+          ease: 'none',
           scrollTrigger: {
             trigger: timelineRef.current,
-            start: 'top 85%',
-            toggleActions: 'play none none none',
+            start: 'top 70%',
+            end: 'bottom 70%',
+            scrub: scrubValue,
+            invalidateOnRefresh: true,
           },
         },
       );
@@ -339,7 +376,7 @@ const About = () => {
         });
 
         gsap.to(plane, {
-          y: () => timeline.offsetHeight - (isMobile ? 70 : 90),
+          y: () => timeline.offsetHeight - (isMobile ? 90 : 130),
           ease: 'none',
           scrollTrigger: {
             trigger: timeline,
@@ -387,7 +424,10 @@ const About = () => {
         </div>
 
         <div ref={timelineRef} className="relative">
-          <div className="achievement-line absolute left-4 top-0 h-full w-px sm:left-6 md:left-1/2 md:-translate-x-1/2"></div>
+          {/* Grey dashes: the runway, always there from the start. */}
+          <div className="runway-dashes runway-line-base absolute left-4 top-0 h-full w-[3px] sm:left-6 sm:w-1 md:left-1/2 md:w-1.5 md:-translate-x-1/2"></div>
+          {/* White dashes: lit up behind the plane as it flies, top-down. */}
+          <div className="runway-dashes runway-line-progress absolute left-4 top-0 h-full w-[3px] sm:left-6 sm:w-1 md:left-1/2 md:w-1.5 md:-translate-x-1/2"></div>
 
           <div
             ref={planeRef}
@@ -395,7 +435,7 @@ const About = () => {
             aria-hidden="true"
           >
             <svg
-              className="gold-plane h-8 w-8 sm:h-9 sm:w-9 md:h-10 md:w-10"
+              className="gold-plane h-11 w-11 sm:h-14 sm:w-14 md:h-16 md:w-16 lg:h-20 lg:w-20"
               viewBox="0 0 24 24"
               fill="none"
             >

@@ -128,10 +128,13 @@ export default function Aurora(props: AuroraProps) {
     const ctn = ctnDom.current;
     if (!ctn) return;
 
+    const isTouch = typeof window !== 'undefined' && ('ontouchstart' in window || navigator.maxTouchPoints > 0);
+
     const renderer = new Renderer({
       alpha: true,
       premultipliedAlpha: true,
-      antialias: true
+      antialias: !isTouch,
+      dpr: Math.min(window.devicePixelRatio || 1, isTouch ? 1 : 2)
     });
     const gl = renderer.gl;
     gl.clearColor(0, 0, 0, 0);

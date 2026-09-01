@@ -325,7 +325,7 @@ const Projects = () => {
     if (!prefersReducedMotion) {
       const bg = document.getElementById("bg-orb-gradient");
       if (bg) {
-        const orbCount = 4;
+        const orbCount = 2;
         const orbs: HTMLDivElement[] = [];
         for (let i = 0; i < orbCount; i++) {
           const orb = document.createElement("div");

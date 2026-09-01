@@ -31,7 +31,7 @@ const Portfolio = () => {
     if (!container) return;
 
     const blobs: HTMLDivElement[] = [];
-    for (let i = 0; i < 6; i++) {
+    for (let i = 0; i < 3; i++) {
       const blob = document.createElement('div');
       blob.style.position = 'absolute';
       blob.style.top = `${Math.random() * 100}%`;

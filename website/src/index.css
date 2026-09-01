@@ -215,23 +215,9 @@ All colors MUST be HSL.
   }
 }
 
-/* Add to your main CSS file */
-@font-face {
-  font-family: 'BankGothic Md BT';
-  src: url('/fonts/BankGothic-Md-BT.woff2') format('woff2'),
-       url('/fonts/BankGothic-Md-BT.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-  font-display: swap;
-}
-
-/* Add to your main CSS file */
-@font-face {
-  font-family: 'Cascadia Code';
-  src: url('/fonts/CascadiaCode-SemiBold.woff2') format('woff2'),
-       url('/fonts/CascadiaCode-SemiBold.woff') format('woff'),
-       url('/fonts/CascadiaCode-SemiBold.ttf') format('truetype');
-  font-weight: 600; /* SemiBold */
-  font-style: normal;
-  font-display: swap;
-}
+/* NOTE: 'BankGothic Md BT' and 'Cascadia Code' font files were never added to
+   public/fonts/ - these @font-face rules pointed at files that don't exist,
+   so every page load fired 5 dead-end font requests for a font that was
+   always going to fall back to the stack's generic sans-serif anyway.
+   Removed until real font files are added; components already declare a
+   sans-serif fallback so nothing visually changes. */

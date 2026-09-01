@@ -1,8 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { Suspense, lazy, useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { Button } from '@/components/ui/button';
 import Orb from './Orb';
 import { Link } from 'react-router-dom';
+
+// three.js (pulled in by GhostCursor) is the single heaviest dependency in
+// the app - load it in its own chunk, off the critical path, instead of
+// bundling it into every page's initial JS.
+const GhostCursor = lazy(() => import('./GhostCursor'));
 
 const Hero = () => {
   const heroRef = useRef<HTMLDivElement>(null);
@@ -15,7 +20,13 @@ const Hero = () => {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [currentText, setCurrentText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
-  
+
+  // Cursor-trail effect needs a real mouse - skip mounting the two extra
+  // WebGL canvases on touch phones/tablets to keep the hero light there.
+  const [showGhostCursor] = useState(
+    () => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches
+  );
+
   const words = ['Research.', 'Develop.', 'Fly.'];
 
   useEffect(() => {
@@ -98,6 +109,31 @@ const Hero = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-transparent to-black/40 pointer-events-none" />
       </div>
+
+      {/* Ghost cursor trail - orange core with the shader's built-in cool-blue
+          tint shift over time, so it still reads as navy+orange.
+          One WebGL layer instead of two (was running two full Three.js
+          renderers + bloom/grain passes simultaneously - the single biggest
+          per-frame GPU cost on this page). Skipped entirely on touch devices:
+          no hover cursor to trail there, and it saves a WebGL context on
+          weaker phone GPUs. Lazy-loaded so three.js never blocks first paint. */}
+      {showGhostCursor && (
+        <Suspense fallback={null}>
+          <GhostCursor
+            color="#FB923C"
+            brightness={0.5}
+            edgeIntensity={0}
+            trailLength={40}
+            inertia={0.5}
+            grainIntensity={0.03}
+            bloomStrength={0.06}
+            bloomRadius={0.9}
+            bloomThreshold={0.25}
+            targetPixels={0.9e6}
+            zIndex={4}
+          />
+        </Suspense>
+      )}
 
       {/* Content - Responsive */}
       <div className="relative z-10 text-center px-4 w-full max-w-7xl mx-auto">
